@@ -1,0 +1,14 @@
+﻿<section>    
+    <h3><%= partner.company %></h3>
+    <span class="description"><%= partner.email %></span>
+    <nav>
+      <ul>
+      <li><%= link_to 'Show', partner %></li>
+      <li><%= link_to 'Edit', edit_partner_path(partner), :method => :edit %></li>
+      <li><%= link_to 'Delete', partner, :method => :delete,
+                                         :confirm => 'You sure?',
+                                         :title => partner.name,
+                                         :class => 'btn btn-primary' %></li>
+      </ul>
+    </nav>  
+</section>

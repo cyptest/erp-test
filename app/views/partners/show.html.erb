@@ -1,0 +1,56 @@
+﻿<%= render 'pages/menu' %>
+
+<div class="span9">
+
+    <h2><%= @partner.company %></h2>  
+    <nav>
+      <ul>
+      <li><%= link_to 'back', partners_path %></li>
+      <li><%= link_to 'Edit', edit_partner_path(@partner), :method => :edit %></li>
+      <li><%= link_to 'Delete', @partner, :method => :delete,
+                                         :confirm => 'You sure?',
+                                         :title => @partner.company,
+                                         :class => 'btn btn-primary' %></li>
+      </ul>
+    </nav>    
+
+    <span class="email"><%= @partner.email %></span>
+    <div class="adr">
+      <div class="street-address"><%= @partner.address %></div>
+      <div class="postal-code"><%= @partner.postal_code %></div>
+      <div class="locality"><%= @partner.city %></div>
+    </div>
+
+    <hr/>    
+    <h2>Products for this partner</h2> 
+
+    <hr/>    
+
+    <nav>
+      <ul>
+      <li><%= link_to 'Search product', "#", :remote => true, :class => "btn btn-primary add-product" %></li>
+      </ul>
+    </nav>
+
+    <div class="alert alert-info add-product-partner">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+
+    <h2>Add Products for this partner</h2>
+    <div class="giant-btn">
+        <%= form_tag "", :method => 'get' do %>
+          <p>
+            <%= text_field_tag :search, params[:search], :class => 'input-giant' %>
+            <%= submit_tag "Search", :name => nil, :class => 'btn btn-primary' %>
+          </p>
+        <% end %>
+    </div>    
+    </div>
+
+    <% if params[:search].present? %>
+
+      <%= render 'products/productsearchadd' %> 
+
+    <% end %>
+
+</div><!--/span-->
+</div><!--/row-fluid-->

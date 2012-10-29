@@ -1,0 +1,97 @@
+<% if signed_in? %>
+
+	<%= render 'pages/menu' %>
+
+        <div class="span9">
+          <div class="hero-unit">
+            <h1>Hello, dude!</h1>
+            <p>This is a small application with Ruby on Rails realize and Bootstrap, it is coded with my little hand as a demonstration.This is an example of what you can do with HTML5, CSS, some Javascript bootstrap and RoR.</p>
+
+			<p>Enjoy!</p>
+            <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+          </div>
+          <div class="row-fluid">
+			<div class="span4">
+				<h2>Lastest partners</h2>
+				<% if @partners.empty? %>
+					<nav>
+					<ul>
+					    <li>
+						<%= link_to 'New', new_partner_path, :class => 'btn btn-primary' %></li>
+					</ul>
+					</nav>				
+      				<em>No partners found</em>  
+				<% else %>
+					<nav>
+					<ul>
+					    <li>
+						<%= link_to 'New', new_partner_path, :class => 'btn btn-primary' %></li>
+					</ul>
+					</nav>					
+					<%= render @partners %>
+				<% end %>
+			</div>
+			<div class="span4">
+				<h2>Lastest products</h2>
+				<% if @products.empty? %>
+					<nav>
+					<ul>
+					    <li>
+						<%= link_to 'New', new_product_path, :class => 'btn btn-primary' %></li>
+					</ul>
+					</nav>				
+      				<em>No products found</em>  
+				<% else %>
+					<nav>
+					<ul>
+					    <li>
+						<%= link_to 'New', new_product_path, :class => 'btn btn-primary' %></li>
+					</ul>
+					</nav>						
+					<%= render @products %>
+				<% end %>				
+			</div>
+			<div class="span4">
+				<h2>Lastest users</h2>
+				<% if @users.empty? %>
+					<nav>
+					<ul>
+					    <li>
+						<%= link_to 'New', new_user_path, :class => 'btn btn-primary' %></li>
+					</ul>
+					</nav>					
+      				<em>No users found</em>  
+				<% else %>
+					<nav>
+					<ul>
+					    <li>
+						<%= link_to 'New', new_user_path, :class => 'btn btn-primary' %></li>
+					</ul>
+					</nav>				
+					<%= render @users %>
+				<% end %>					
+			</div>
+          </div><!--/row-->
+
+        </div><!--/span-->
+        </div><!--/row-fluid-->
+
+
+<% else %>
+
+<div class="row-fluid">
+<div class="span12">
+
+	<div class="hero-unit">
+	<h1>Dude!</h1>
+	<p>You love your business, learns to love the frameworks and makes life easy for those around you.</p>
+	</div>
+
+	<div class="giant-btn">
+	<%= link_to "Sign up now!", signup_path, :class => "btn btn-primary" %>
+	</div>		
+
+</div><!--/span-->
+</div>
+
+<% end %>

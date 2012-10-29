@@ -1,0 +1,47 @@
+﻿<%= render 'pages/menu' %>
+
+<div class="span9">
+<h2>List partners</h2>
+<nav>
+<ul>
+    <li>
+	<%= link_to 'New', new_partner_path, :class => 'btn btn-primary' %></li>
+</ul>
+</nav>
+
+<% if @partners.empty? %>
+
+  <section>
+      <em>No partners found</em>
+  </section>    
+
+<% else %>
+
+  <div class="giant-btn">
+      <%= form_tag partners_path, :method => 'get' do %>
+        <p>
+          <%= text_field_tag :search, params[:search], :class => 'input-giant' %>
+          <%= submit_tag "Search", :name => nil, :class => 'btn btn-primary' %>
+        </p>
+      <% end %>
+  </div>
+
+  <% if params[:search].present? %>
+
+  	<%= render @partnersearch %> 
+
+  <% else %>
+
+  	<%= will_paginate %>
+
+  	  <%= render @partners %>
+
+  	<%= will_paginate %>
+
+  <% end %>
+
+<% end %>
+
+
+</div><!--/span-->
+</div><!--/row-fluid-->

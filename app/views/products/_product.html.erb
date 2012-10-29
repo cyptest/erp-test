@@ -1,0 +1,18 @@
+﻿<section>
+    <h3><%= product.name %></h3>
+    <span class="description"><%= product.description %></span>
+    <div class="input-prepend input-append price">
+    <span class="add-on">€</span><input class="span2" id="appendedPrependedInput" size="16" type="text" value="<%= product.price_cents %>"><span class="add-on">.00</span>
+    </div>    
+
+    <nav>
+      <ul>   
+      <li><%= link_to 'Show', product %></li>
+      <li><%= link_to 'Edit', edit_product_path(product), :method => :edit %></li>
+      <li><%= link_to 'Delete', product, :method => :delete,
+                                         :confirm => 'You sure?',
+                                         :title => product.name,
+                                         :class => 'btn btn-primary' %></li>
+      </ul>
+  	</nav>
+</section>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  partner_id: 
+  created_at: 2012-10-20 17:18:48
+  updated_at: 2012-10-20 17:18:48
+
+two:
+  partner_id: 
+  created_at: 2012-10-20 17:18:48
+  updated_at: 2012-10-20 17:18:48

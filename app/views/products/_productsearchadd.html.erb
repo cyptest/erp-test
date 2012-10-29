@@ -1,0 +1,19 @@
+<section>
+	<% @productsearchadd.each do |product| %>
+    <h3><%= product.name %></h3>
+    <span class="description"><%= product.description %></span>
+    <div class="input-prepend input-append price">
+    <span class="add-on">€</span>
+    <input class="span2" id="appendedPrependedInput" size="16" type="text" value="<%= product.price_cents %>">
+    <span class="add-on">.00</span>
+    </div>   
+
+	<%= form_for(product.productpartner.build(:partner_id => @partner.id),
+	                          :remote => true) do |f| %>
+	  <div><%= f.hidden_field :partner_id %></div>
+	  <div class="actions"><%= f.submit "Add product for this partner" %></div>
+	<% end %>	
+
+  	<% end %>
+</section>
+

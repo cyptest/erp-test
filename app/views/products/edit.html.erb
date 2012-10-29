@@ -1,0 +1,15 @@
+﻿<%= render 'pages/menu' %>
+
+<div class="span9">
+
+<h2>Edit product <%= @product.name %></h2>
+
+<%= form_for(@product) do |f| %>
+  <%= render 'fields', :f => f %>
+  <div class="actions">
+    <%= f.submit "Update product", :class => "btn btn-primary" %>
+  </div>
+<% end %>
+
+</div><!--/span-->
+</div><!--/row-fluid-->

@@ -1,0 +1,14 @@
+﻿<section>
+    <h3><%= user.name %></h3>
+    <span class="description"><%= user.email %></span>
+    <nav>
+    <ul>
+    <li><%= link_to 'Show', user %></li>
+    <li><%= link_to 'Edit', edit_user_path(user), :method => :edit %></li>
+    <li><%= link_to 'Delete', user, :method => :delete,
+                                       :confirm => 'You sure?',
+                                       :title => user.name,
+                                       :class => 'btn btn-primary' %></li>
+    </ul>
+	  </nav>
+</section>

@@ -1,0 +1,15 @@
+﻿<%= render 'pages/menu' %>
+
+<div class="span9">
+	<h2>New partner</h2>
+
+	<%= form_for(@partner) do |f| %>
+	  <%= render 'fields', :f => f %>
+	  <div class="actions">
+	    <%= f.submit "Add partner", :class => "btn btn-primary" %>
+	  </div>
+	<% end %>
+</div>
+
+</div><!--/span-->
+</div><!--/row-fluid-->

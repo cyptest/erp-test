@@ -1,0 +1,15 @@
+﻿<%= render 'pages/menu' %>
+
+<div class="span9">
+
+<h1>Update user <%= @user.name %></h1>
+
+<%= form_for(@user) do |f| %>
+  <%= render 'fields', :f => f %>
+  <div class="actions">
+    <%= f.submit "Add user", :class => "btn btn-primary" %>
+  </div>
+<% end %>
+
+</div><!--/span-->
+</div><!--/row-fluid-->
